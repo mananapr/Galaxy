@@ -9,7 +9,7 @@ afternoon, between 12h and 17h
 ![screenshot](https://s1.gifyu.com/images/Screenshot-1204.png)
 evening, between 18h and 23h
 
-[Live Demo](https://catgrills.github.io/Galaxy/) of <i>Galaxy</i>.
+[Live Demo](https://mananapr.github.io/Galaxy/) of <i>Galaxy</i>.
 
 About
 -------------------------------
