@@ -1,4 +1,4 @@
-var json_url = "http://api.openweathermap.org/data/2.5/weather?q=Noida,fra&appid=a70d956581f575b02ad518684afb6c13";
+var json_url = "https://api.openweathermap.org/data/2.5/weather?q=Noida,fra&appid=a70d956581f575b02ad518684afb6c13";
 var city;
 var temp_curr;
 var temp_low;
