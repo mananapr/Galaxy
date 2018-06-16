@@ -1,114 +1,78 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-	<head>
-	        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	        <title>Home</title>
-	        <link rel="shortcut icon" type="image/png" href="icons/favicon.png"/>
-	        <link rel="stylesheet" type="text/css" href="style.css">
-	        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	        <script type="text/javascript">
-		        $(document).ready(function() {
-			$('.button').click(function(e) {
-				e.preventDefault();
-				setContent($(this));
-			});
 
-			$('.button.active').length && setContent($('.button.active'));
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Home</title>
+	<link rel="shortcut icon" type="image/png" href="icons/favicon_01.png" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 
-			function setContent($el) {
-				$('.button').removeClass('active');
-				$('.box').hide();
-				$el.addClass('active');
-				$($el.data('rel')).show();
-			}
+</head>
 
-			function changeBg() {
-				var now = new Date();
-				var n = now.getHours();
-				
-				if ( n >= 12 && n <= 17 ) {
-				       	picture = "url('background/background01.png')";
-					color1 = "#1F9EA3";
-					color2 = "#4CD4B0";
-					message="おはよう"
-				} else if ( n >= 18  && n <= 24) {
-					picture = "url('background/background02.png')";
-					color1 = "#00587A";
-					color2 = "#F0B799";
-					message=" こんにちは"
-				} else if ( n >= 0 && n <= 11 ) {
-					picture = "url('background/background03.png')";
-					color1 = "#1C9987";
-					color2 = "#CCCCCC";
-					message=" こんばんは"
-				} 
-				document.getElementById("container").style.background = picture;
-				document.getElementById("border").style.background = color1;
-				document.getElementById('box1').style.color = document.getElementById('box2').style.color = document.getElementById('box3').style.color = color2;
-				document.getElementById("details").style.background = color2;
-				document.getElementById("message").innerHTML = message;
-			 }
-			 changeBg();
-		        });
-	        </script>
-	</head>
-	<body>
-	        	<div id="container">
-		              <div class="sidebar">
-		                              <div id="border"></div>
-		                              <button id="first-btn" class="button active" data-rel="#box1">01</button>
-			                              <div class="box" id="box1">
-			                                	<h1>4chan</h1>
-						<a href="http://boards.4chan.org/a/">animu</a>
-						<a href="http://boards.4chan.org/c/">cute stuff</a>
-						<a href="http://boards.4chan.org/wg/">rice and walls</a>
-						<a href="http://boards.4chan.org/g/">computer</a>
-						<a href="http://boards.4chan.org/r9k/">robot9001</a>
-						<a href="http://boards.4chan.org/pol/">politics</a>
-						<a href="http://boards.4chan.org/b/">random</a>
-						<a href="http://boards.4chan.org/bant/">banter</a>
-						<a href="http://boards.4chan.org/tv/">television</a>
-						<a href="http://boards.4chan.org/x/">paranormal</a>
-			                              </div>
-		                              <button id="second-btn" class="button" data-rel="#box2">02</button>
-			                              <div class="box" id="box2">
-			                                           <h1>College</h1>
-				                            <a href="https://snulinks.snu.edu.in/">snulinks</a>
-				                            <a href="https://blackboard.snu.edu.in/">blackboard</a>
-				                            <a href="https://markattendance.webapps.snu.edu.in/">attendance</a>
-				                            <a href="https://prodweb.snu.in/psp/CSPROD/EMPLOYEE/HRMS/?cmd=login">enrollment</a>
-				                            <a href="https://myaccount.snu.edu.in/">data usage</a>
-				                            <a href="http://messmenu.snu.in/messMenu.php">messmenu</a>
-				                            <a href="https://video.snu.edu.in/login.php">nptel videos</a>
-				                            <a href="https://netidportal.snu.edu.in/pwdForgot.php">netid settings</a>
-			                            </div>
-		                            <button id="third-btn" class="button" data-rel="#box3">03</button>
-			                            <div class="box" id="box3">
-			                                           <h1>Other Stuff</h1>
-				                            <a href="https://www.youtube.com/">videos</a>
-				                            <a href="https://myanimelist.net/">mal</a>
-				                            <a href="https://web.whatsapp.com/">chat</a>
-				                            <a href="https://mail.google.com/mail/u/0/">gmail</a>
-				                            <a href="https://danbooru.donmai.us/">booru</a>
-				                            <a href="https://proxybay.one">torrent</a>
-				                            <a href="https://safe.moe">safe</a>
-				                            <a href="https://github.com/mananapr">github</a>
-				                            <a href="https://reddit.com">reddit</a>
-			                              </div>	                            
-		             	</div>
-	                           <div class="form">
-	                           		<input  id="searchbox" name="q" type="text" autocomplete="off" class="cleardefault" maxlength="100"   placeholder="search engine ..." size="17" autofocus="autofocus" />
-	                           		<input type="submit" id="image-button" value=""></input>
-	                           </div>
-			<div id="details">
-				<div id="weather">
-					<h2 id="description"></h2>
-					<h3 id="temp_curr"></h3>
-				</div> 
+<body>
+	<div id="container">
+		<div id="nav">
+			<div id="border">
+				<button id="first-btn" class="button active" data-rel="#box1">01</button>
+				<button id="second-btn" class="button" data-rel="#box2">02</button>
+				<button id="third-btn" class="button" data-rel="#box3">03</button>
 			</div>
-			<div id="message"></div>
-	        	</div>
-	</body>
-	<script type="text/javascript" src="js/search.js"></script>
-  	<script src="js/weather.js"></script>
+			<div class="sidebar">
+				<div class="box" id="box1">
+					<h1>4chan</h1>
+                    <a href="http://boards.4chan.org/a/">animu</a>
+                    <a href="http://boards.4chan.org/c/">cute stuff</a>
+                    <a href="http://boards.4chan.org/wg/">rice and walls</a>
+                    <a href="http://boards.4chan.org/g/">computer</a>
+                    <a href="http://boards.4chan.org/r9k/">robot9001</a>
+                    <a href="http://boards.4chan.org/pol/">politics</a>
+                    <a href="http://boards.4chan.org/b/">random</a>
+                    <a href="http://boards.4chan.org/bant/">banter</a>
+                    <a href="http://boards.4chan.org/tv/">television</a>
+                    <a href="http://boards.4chan.org/x/">paranormal</a>
+				</div>
+				<div class="box" id="box2">
+					<h1>College</h1>
+                    <a href="https://snulinks.snu.edu.in/">snulinks</a>
+                    <a href="https://blackboard.snu.edu.in/">blackboard</a>
+                    <a href="https://markattendance.webapps.snu.edu.in/">attendance</a>
+                    <a href="https://prodweb.snu.in/psp/CSPROD/EMPLOYEE/HRMS/?cmd=login">enrollment</a>
+                    <a href="https://myaccount.snu.edu.in/">data usage</a>
+                    <a href="http://messmenu.snu.in/messMenu.php">messmenu</a>
+                    <a href="https://video.snu.edu.in/login.php">nptel videos</a>
+                    <a href="https://netidportal.snu.edu.in/pwdForgot.php">netid settings</a>
+				</div>
+				<div class="box" id="box3">
+					<h1>Other Stuff</h1>
+                    <a href="https://www.youtube.com/">videos</a>
+                    <a href="https://myanimelist.net/">mal</a>
+                    <a href="https://web.whatsapp.com/">chat</a>
+                    <a href="https://mail.google.com/mail/u/0/">gmail</a>
+                    <a href="https://danbooru.donmai.us/">booru</a>
+                    <a href="https://proxybay.one">torrent</a>
+                    <a href="https://safe.moe">safe</a>
+                    <a href="https://github.com/mananapr">github</a>
+                    <a href="https://reddit.com">reddit</a>
+				</div>
+			</div>
+		</div>
+		<div class="form">
+			<input id="searchbox" name="q" type="text" autocomplete="off" class="cleardefault" maxlength="100" placeholder="search engine ..."
+			    size="17" autofocus="autofocus" />
+			<input type="submit" id="image-button" value=""></input>
+		</div>
+		<div id="details">
+			<div id="weather">
+				<h2 id="description"></h2>
+				<h3 id="temp_curr"></h3>
+			</div>
+		</div>
+		<div id="message"></div>
+	</div>
+	<script src="js/index.js"></script>
+	<script src="js/search.js"></script>
+	<script src="js/weather.js"></script>
+</body>
+
 </html>
