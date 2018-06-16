@@ -33,7 +33,7 @@ function insertWeatherInfo(city, temp_curr, temp_low, temp_high, description) {
 }
 
 const json_url =
-  'http://api.openweathermap.org/data/2.5/weather?q=Noida,ind&appid=61f41ea5dd97a61d4c6f517ce912bc84';
+  'https://api.openweathermap.org/data/2.5/weather?q=Noida,ind&appid=61f41ea5dd97a61d4c6f517ce912bc84';
 fetch(json_url)
   .then(res => res.json())
   .then(json_obj => {
